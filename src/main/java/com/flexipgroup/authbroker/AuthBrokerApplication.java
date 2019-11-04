@@ -9,5 +9,7 @@ public class AuthBrokerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AuthBrokerApplication.class, args);
 	}
+	
+	
 
 }
