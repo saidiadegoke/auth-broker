@@ -2,16 +2,44 @@ package com.flexipgroup.app.common;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
+
+import org.springframework.stereotype.Service;
+
 import java.security.Key;
+import java.security.SecureRandom;
 
 import io.jsonwebtoken.*;
 
 import java.util.Date;
+import java.util.Random;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.Claims;
 
+@Service
 public class Utils {
+	
+	private final Random RANDOM = new SecureRandom();
+    private final String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
+    public String generateUserId(int length) {
+        return generateRandomString(length);
+    }
+    
+    public String generateAddressId(int length) {
+        return generateRandomString(length);
+    }
+    
+    private String generateRandomString(int length) {
+        StringBuilder returnValue = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            returnValue.append(ALPHABET.charAt(RANDOM.nextInt(ALPHABET.length())));
+        }
+
+        return new String(returnValue);
+    }
+
 	
 	// The secret key. This should be in a property file NOT under source
     // control and not hard coded in real life. We're putting it here for

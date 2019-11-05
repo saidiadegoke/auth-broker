@@ -2,6 +2,9 @@ package com.flexipgroup.app.dto;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserDto implements Serializable {
 
 	/**
@@ -16,6 +19,7 @@ public class UserDto implements Serializable {
 	private String encryptedPassword;
 	private String emailVerificationToken;
 	private Boolean emailVerificationStatus = false;
+	private String token;
 	
 	//getters and setters
 	public long getId() {
@@ -59,6 +63,12 @@ public class UserDto implements Serializable {
 	}
 	public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
 		this.emailVerificationStatus = emailVerificationStatus;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 	
 	
