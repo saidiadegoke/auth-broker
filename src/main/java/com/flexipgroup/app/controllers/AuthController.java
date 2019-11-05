@@ -1,4 +1,4 @@
-package com.flexipgroup.authbroker.controllers;
+package com.flexipgroup.app.controllers;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
